@@ -1,3 +1,41 @@
-label, input, button{
+.form_container{
+  background-color: #0005;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  z-index: 1;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+.App_title{
+  font-size: 2rem;
+  position: relative;
+  left: 1rem;
+  padding-bottom: 1rem;
+}
+.App_btn{
+  background-color: #555A88;
   font-size: 1.5rem;
+  color: white;
+  padding: 0.5em 1.5em;
+  position: relative;
+  left: 1rem;
+}
+.close_form{
+  /*display: none;*/
+  transform: translateX(-100%);
+}
+.user_container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  width: 100%;
+  max-width: 1200px;
+  gap: 2em;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3em;
 }

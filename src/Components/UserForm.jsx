@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import './styles/userForm.css'
 
-const UserForm = ({createNewUser, updateInfo, updateUserById, setUpdateInfo}) => {
+const UserForm = ({createNewUser, updateInfo, updateUserById, setUpdateInfo, setCloseForm}) => {
 
     useEffect(() => {
         reset(updateInfo)
@@ -31,29 +32,30 @@ const UserForm = ({createNewUser, updateInfo, updateUserById, setUpdateInfo}) =>
     }
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
-      <h2>{updateInfo ? 'Update User' : 'Create User'}</h2>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" placeholder="Write your Email" {...register('email')} />
+    <form className="form" onSubmit={handleSubmit(submit)}>
+      <div onClick={() => setCloseForm(true)} className="form_x">x</div>
+      <h2 className="form_title">{updateInfo ? 'Update User' : 'Create User'}</h2>
+      <div className="form_div">
+        <label className="form_label" htmlFor="email">Email</label>
+        <input className = 'form_input' type="email" id="email" placeholder="Write your Email" {...register('email')} />
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" placeholder="Write your Password" {...register('password')} />
+      <div className="form_div">
+        <label className="form_label" htmlFor="password">Password</label>
+        <input className = 'form_input' type="password" id="password" placeholder="Write your Password" {...register('password')} />
       </div>
-      <div>
-        <label htmlFor="first_name">First Name</label>
-        <input type="text" id="first_name" placeholder="Write your First Name" {...register('first_name')} />
+      <div className="form_div">
+        <label className="form_label" htmlFor="first_name">First Name</label>
+        <input className = 'form_input' type="text" id="first_name" placeholder="Write your First Name" {...register('first_name')} />
       </div>
-      <div>
-        <label htmlFor="last_name">Last Name</label>
-        <input type="text" id="last_name" placeholder="Write your Last Name" {...register('last_name')} />
+      <div className="form_div">
+        <label className="form_label" htmlFor="last_name">Last Name</label>
+        <input className = 'form_input' type="text" id="last_name" placeholder="Write your Last Name" {...register('last_name')} />
       </div>
-      <div>
-        <label htmlFor="birthday">Birthday</label>
-        <input type="date" id="birthday"  {...register('birthday')} />
+      <div className="form_div">
+        <label className="form_label" htmlFor="birthday">Birthday</label>
+        <input className = 'form_input' type="date" id="birthday"  {...register('birthday')} />
       </div>
-      <button>Submit</button>
+      <button onClick={() => setCloseForm(true)} className="form_btn">Submit</button>
     </form>
   );
 };

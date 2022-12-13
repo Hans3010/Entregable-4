@@ -23,7 +23,7 @@ const useCrud = () => {
       .catch((err) => console.log(err));
   };
   const deleteUserById = (id) => {
-    const URL = `http://users-crud.academlo.tech/users/${id}/`;
+    const URL = `https://users-crud.academlo.tech/users/${id}/`;
     axios
       .delete(URL)
       .then((res) => {
@@ -34,7 +34,7 @@ const useCrud = () => {
   };
 
   const updateUserById = (id, data) => {
-    const URL = `http://users-crud.academlo.tech/users/${id}/`;
+    const URL = `https://users-crud.academlo.tech/users/${id}/`;
     axios
       .put(URL, data)
       .then((res) => {
